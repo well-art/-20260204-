@@ -23,8 +23,8 @@ const DocumentModal: React.FC<DocumentModalProps> = ({ document, onClose }) => {
   } else {
     // For regular Docs, Sheets, and PDFs on Drive
     previewUrl = `https://drive.google.com/file/d/${document.driveId}/preview`;
-    // CHANGED: Use /view instead of /edit to ensure read-only mode
-    viewUrl = `https://docs.google.com/document/d/${document.driveId}/view`;
+    // CHANGED: Use /preview for the external link as well to strictly prevent editing toolbar from appearing
+    viewUrl = `https://drive.google.com/file/d/${document.driveId}/preview`;
   }
 
   // Logic to determine if Word download should be shown

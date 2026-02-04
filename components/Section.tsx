@@ -75,25 +75,30 @@ const Section: React.FC<SectionProps> = ({ title, subCategories, documents, onDo
                 className="group flex items-center p-4 hover:bg-enterprise-green/5 transition-colors cursor-pointer gap-4"
               >
                 {/* Title Column with Numbering */}
-                <div className="flex-grow min-w-0">
-                  <h4 className="text-base font-medium text-gray-700 group-hover:text-enterprise-green transition-colors truncate">
-                    <span className="font-mono text-gray-400 mr-2 group-hover:text-enterprise-green/70">
+                <div className="flex-grow min-w-0 py-1">
+                  <h4 className="text-base font-medium text-gray-700 group-hover:text-enterprise-green transition-colors truncate flex items-center">
+                    <span className="font-mono text-gray-400 mr-2 group-hover:text-enterprise-green/70 text-sm">
                       {(index + 1).toString().padStart(2, '0')}.
                     </span>
                     {doc.title}
                   </h4>
+                  {doc.description && (
+                    <p className="text-sm text-gray-400 mt-1 line-clamp-2 pl-7 font-light">
+                      {doc.description}
+                    </p>
+                  )}
                 </div>
 
                 {/* Date Column - Moved to the Right */}
                 {doc.date && (
-                  <div className="flex-shrink-0 w-28 text-sm text-gray-500 flex items-center justify-end gap-1.5">
+                  <div className="flex-shrink-0 w-28 text-sm text-gray-500 flex items-center justify-end gap-1.5 self-start mt-1">
                     <Calendar className="w-4 h-4 text-gray-400" />
                     {doc.date}
                   </div>
                 )}
 
                 {/* Action Icon */}
-                <div className="flex-shrink-0 text-gray-300 group-hover:text-enterprise-green transition-colors">
+                <div className="flex-shrink-0 text-gray-300 group-hover:text-enterprise-green transition-colors self-center">
                   <ChevronRight className="w-5 h-5" />
                 </div>
               </div>

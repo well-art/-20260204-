@@ -47,7 +47,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
                   ? 'border-red-500 focus:ring-red-200' 
                   : 'border-gray-300 focus:border-enterprise-green focus:ring-enterprise-green/20'
               }`}
-              placeholder="輸入密碼 (2693988)"
+              placeholder="請輸入密碼"
               autoFocus
             />
             {error && (
